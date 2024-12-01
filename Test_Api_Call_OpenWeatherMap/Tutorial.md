@@ -6,7 +6,7 @@ This tutorial explains how to make a request to the OpenWeather API using JavaSc
 
 1. **OpenWeather Account**:
    - Sign up at [OpenWeather](https://openweathermap.org/) to access the API.
-     ![Page](Test_Api_Call_OpenWeatherMap/Photos/PageOpenWeather.png)
+     ![Page](Photos/PageOpenWeather.png)
 2. **API Key**:
    - Once registered, get your API Key from your dashboard.
 
