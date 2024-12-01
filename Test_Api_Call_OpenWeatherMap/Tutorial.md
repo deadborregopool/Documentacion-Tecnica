@@ -9,6 +9,9 @@ This tutorial explains how to make a request to the OpenWeather API using JavaSc
      ![Page](Photos/PageOpenWeather.png)
 2. **API Key**:
    - Once registered, get your API Key from your dashboard.
-     2.1.Dashboard:
-     2.2.Generate
+
+     ![Dashboard](Photos/DashBoard.png)
+
+     ![Dashboard](Photos/GenerateApi.png)
+     
 
