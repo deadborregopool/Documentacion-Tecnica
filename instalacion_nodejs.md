@@ -7,6 +7,7 @@ Node.js es un entorno de ejecución para JavaScript construido con el motor V8 d
 
 1. **Descargar Node.js:**
    - Visita la página oficial: [https://nodejs.org/](https://nodejs.org/).
+       ![Captura de pantalla 2024-11-30 194755](https://github.com/user-attachments/assets/0bb48857-58a7-4d95-b600-f82b08110484)
    - Descarga la versión LTS (Long-Term Support) para mayor estabilidad.
 
 2. **Instalar Node.js:**
