@@ -1,25 +1,24 @@
-# Instalación de Node.js (Paso a Paso)
+# Installation of Node.js (Step by Step)
 
-## ¿Qué es Node.js?
-Node.js es un entorno de ejecución para JavaScript construido con el motor V8 de Chrome. Permite ejecutar código JavaScript fuera del navegador, ideal para crear aplicaciones del lado del servidor.
+## What is Node.js?
+Node.js is a JavaScript runtime built on Chrome's V8 engine. It allows you to run JavaScript code outside the browser, making it ideal for server-side applications.
 
-## Pasos para instalar Node.js
+## Steps to Install Node.js
 
-1. **Descargar Node.js:**
-   - Visita la página oficial: [https://nodejs.org/](https://nodejs.org/).
-       ![Captura de pantalla 2024-11-30 194755](https://github.com/user-attachments/assets/0bb48857-58a7-4d95-b600-f82b08110484)
-   - Descarga la versión LTS (Long-Term Support) para mayor estabilidad.
+1. **Download Node.js:**
+   - Visit the official website: [https://nodejs.org/](https://nodejs.org/).
+   - Download the **LTS (Long-Term Support)** version for better stability.
 
-2. **Instalar Node.js:**
-   - Ejecuta el instalador descargado.
-   - Acepta los términos de uso.
-   - Configura el directorio de instalación (usualmente es por defecto).
-   - Marca la opción para instalar npm junto con Node.js.
+2. **Install Node.js:**
+   - Run the installer you downloaded.
+   - Accept the terms of use.
+   - Set the installation directory (usually the default one is fine).
+   - Check the option to install npm along with Node.js.
 
-3. **Verificar la instalación:**
-   - Abre una terminal.
-   - Escribe `node -v` para verificar la versión de Node.js.
-   - Escribe `npm -v` para verificar la versión de npm.
+3. **Verify the Installation:**
+   - Open a terminal.
+   - Type `node -v` to check the Node.js version.
+   - Type `npm -v` to check the npm version.
 
-4. **Instalar herramientas adicionales (opcional):**
-   - Puedes instalar `nvm` (Node Version Manager) para gestionar múltiples versiones de Node.js.
+4. **Optional: Install Additional Tools:**
+   - You can install **nvm (Node Version Manager)** to manage multiple versions of Node.js.
