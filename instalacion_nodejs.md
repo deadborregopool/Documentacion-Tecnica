@@ -27,9 +27,13 @@ Node.js is a JavaScript runtime built on Chrome's V8 engine. It allows you to ru
 
      ![image](https://github.com/user-attachments/assets/6934b232-1e13-4248-a961-ed8a331e4c8d)
 
+   - Now press next next until the installation is finished
+
+     ![image](https://github.com/user-attachments/assets/e713094c-69fc-49ce-9b9a-93c210960f82)
 
 3. **Verify the Installation:**
    - Open a terminal.
+     
    - Type `node -v` to check the Node.js version.
    - Type `npm -v` to check the npm version.
 
