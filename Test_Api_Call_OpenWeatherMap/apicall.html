@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    #weather-info {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-radius: 8px;
+      max-width: 400px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 70%;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #weather-icon {
+      margin-top: 10px;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Search Weather by City</h1>
+  <form id="weather-form">
+    <input type="text" id="city-input" placeholder="Enter city name (e.g., Lima)">
+    <button type="submit">Search</button>
+  </form>
+
+  <div id="weather-info" style="display: none;">
+    <h2 id="city-name"></h2>
+    <p id="temperature"></p>
+    <p id="description"></p>
+    <img id="weather-icon" src="" alt="Weather Icon">
+  </div>
+
+  <script>
+    const apiKey = "9890ac87c6973b9f36a6a161b724b21d"; 
+    const weatherForm = document.getElementById("weather-form");
+    const cityInput = document.getElementById("city-input");
+    const weatherInfo = document.getElementById("weather-info");
+    const cityName = document.getElementById("city-name");
+    const temperature = document.getElementById("temperature");
+    const description = document.getElementById("description");
+    const weatherIcon = document.getElementById("weather-icon");
+
+    weatherForm.addEventListener("submit", async (e) => {
+      e.preventDefault(); 
+
+      const city = cityInput.value.trim();
+      if (!city) {
+        alert("Please enter a city name!");
+        return;
+      }
+
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=en`;
+
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error("City not found!");
+        }
+
+        const data = await response.json();
+
+   
+        cityName.innerText = `Weather in ${data.name}, ${data.sys.country}`;
+        temperature.innerText = `Temperature: ${data.main.temp}°C`;
+        description.innerText = `Description: ${data.weather[0].description}`;
+        weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+    
+        weatherInfo.style.display = "block";
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+  </script>
+</body>
+</html>
