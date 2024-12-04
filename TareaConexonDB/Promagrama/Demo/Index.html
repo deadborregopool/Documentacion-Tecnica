@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Ingreso de Datos</title>
+    <script>
+        function validarFormulario() {
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const sueldo = document.getElementById('sueldo').value;
+
+            if (!nombre || !apellido || !sueldo) {
+                alert("Todos los campos son obligatorios.");
+                return false;
+            }
+
+            if (isNaN(sueldo) || sueldo <= 0) {
+                alert("El sueldo debe ser un número mayor a 0.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Ingreso de Datos</h1>
+    <form action="guardar_datos.php" method="POST" onsubmit="return validarFormulario();">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        
+        <label for="apellido">Apellido:</label><br>
+        <input type="text" id="apellido" name="apellido"><br><br>
+        
+        <label for="sueldo">Sueldo:</label><br>
+        <input type="text" id="sueldo" name="sueldo"><br><br>
+        
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>
