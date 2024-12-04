@@ -41,27 +41,36 @@ $conn->close();
 
 ```
 
-# Explicación del Código
+## Explicación del Código
 
-## 1. Conexión a la Base de Datos
+### 1. Conexión a la Base de Datos
 El código utiliza la clase `mysqli` para establecer una conexión con la base de datos:
-- Se especifican los detalles del servidor, el usuario, la contraseña y el nombre de la base de datos.
-- Si ocurre un error en la conexión, el script se detiene y se muestra un mensaje de error.
+- Se define el servidor (`localhost`), el usuario (`root`), la contraseña (vacía) y el nombre de la base de datos (`db_demo`).
+- Si ocurre un error durante la conexión, se detiene la ejecución con `die()` y se muestra un mensaje de error.
 
-## 2. Captura de Datos
-Los datos se obtienen desde un formulario HTML mediante el método `POST`. Los valores ingresados en los campos del formulario se asignan a variables PHP (`$nombre`, `$apellido`, `$sueldo`).
+### 2. Captura de Datos
+Los datos enviados desde un formulario HTML mediante el método `POST` se asignan a las variables PHP:
+- `$nombre`: Almacena el valor ingresado en el campo `name="nombre"`.
+- `$apellido`: Almacena el valor ingresado en el campo `name="apellido"`.
+- `$sueldo`: Almacena el valor ingresado en el campo `name="sueldo"`.
 
-## 3. Validación de Datos
+### 3. Validación de Datos
 Antes de insertar los datos, se verifica que:
-- Ninguno de los campos esté vacío.
-- El sueldo sea un número válido.
+- Ninguno de los campos esté vacío utilizando `empty()`.
+- El valor de `$sueldo` sea un número válido con `is_numeric()`.
 
-Si no se cumplen estas condiciones, se muestra un mensaje de error y el script se detiene.
+Si los datos no son válidos:
+- Se muestra un mensaje de error al usuario.
+- El script se detiene con `exit`.
 
-## 4. Inserción de Datos
-Se prepara una consulta SQL para agregar los datos capturados a la tabla `empleados`. Luego, se ejecuta esta consulta:
-- Si la operación es exitosa, se informa al usuario.
-- En caso contrario, se muestra el error específico.
+### 4. Inserción de Datos
+Se prepara una consulta SQL para insertar los datos en la tabla `empleados`:
+- `INSERT INTO empleados (Nombre, Apellido, Sueldo)`: Especifica las columnas donde se insertarán los datos.
+- `VALUES ('$nombre', '$apellido', '$sueldo')`: Proporciona los valores capturados.
 
-## 5. Cierre de Conexión
-Finalmente, se cierra la conexión con la base de datos usando `$conn->close()`. Esto es importa
+La consulta se ejecuta con `$conn->query($sql)`:
+- Si tiene éxito, se muestra un mensaje indicando que los datos se guardaron correctamente.
+- Si falla, se muestra un mensaje de error con los detalles del problema.
+
+### 5. Cierre de Conexión
+Finalmente, la conexión con la base de datos se cierra usando `$conn->close()` para liberar los recursos utilizados.
