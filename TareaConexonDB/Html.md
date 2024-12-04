@@ -79,3 +79,44 @@ La función verifica que el valor ingresado en el campo sueldo sea un número v�
 Si todas las validaciones son exitosas:
 - La función retorna `true`.
 - Esto permite que el formulario se envíe al servidor para su procesamiento.
+
+## Descripción del HTML
+
+### 1. Estructura del Documento
+El HTML sigue la estructura estándar de un documento web:
+- Declara el estándar HTML5 con `<!DOCTYPE html>`.
+- Define el idioma del contenido como inglés utilizando el atributo `lang="en"` en la etiqueta `<html>`.
+
+### 2. Cabecera del Documento (`<head>`)
+La cabecera incluye:
+- **Codificación de caracteres**: Se establece como UTF-8 para soportar caracteres internacionales.
+- **Vista responsiva**: La metaetiqueta `viewport` asegura que el diseño se adapte a diferentes dispositivos, como móviles y tablets.
+- **Título de la página**: Se define como "Demo: Ingreso de Datos", que será visible en la pestaña del navegador.
+
+### 3. Encabezado de la Página
+Dentro del cuerpo (`<body>`), el encabezado principal es un elemento `<h1>` con el texto "Ingreso de Datos". Esto actúa como el título principal de la página y describe su propósito.
+
+### 4. Formulario
+El formulario es el elemento central del HTML y permite capturar datos del usuario. Sus características principales son:
+- **Acción (`action`)**: Envía los datos al archivo `guardar_datos.php` para su procesamiento en el servidor.
+- **Método (`method`)**: Utiliza el método `POST` para enviar los datos de forma segura.
+- **Validación (`onsubmit`)**: Llama a la función de JavaScript `validarFormulario` antes de enviar el formulario. Si la función devuelve `false`, el envío se detiene.
+
+### 5. Campos del Formulario
+El formulario incluye tres campos de entrada, cada uno con una etiqueta asociada:
+1. **Nombre**:
+   - Etiqueta: "Nombre".
+   - Campo de texto donde el usuario ingresa su nombre.
+   - Identificado por el atributo `id="nombre"` y enviado con el nombre `name="nombre"`.
+2. **Apellido**:
+   - Etiqueta: "Apellido".
+   - Campo de texto donde el usuario ingresa su apellido.
+   - Identificado por el atributo `id="apellido"` y enviado con el nombre `name="apellido"`.
+3. **Sueldo**:
+   - Etiqueta: "Sueldo".
+   - Campo de texto donde el usuario ingresa un valor numérico para el sueldo.
+   - Identificado por el atributo `id="sueldo"` y enviado con el nombre `name="sueldo"`.
+
+### 6. Botón de Envío
+El botón "Guardar" envía los datos al servidor al ser clicado, siempre y cuando las validaciones sean exitosas.
+
