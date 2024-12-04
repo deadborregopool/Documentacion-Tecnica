@@ -21,7 +21,7 @@ $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $sueldo = $_POST['sueldo'];
 
-// Validar datos (básico)
+// Validar datos 
 if (empty($nombre) || empty($apellido) || empty($sueldo) || !is_numeric($sueldo)) {
     echo "Datos inválidos. Por favor, inténtalo de nuevo.";
     exit;
