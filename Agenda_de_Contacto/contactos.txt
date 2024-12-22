@@ -1,0 +1,4 @@
+Edwin,Herreraz,987654321,edwin@example.com
+Fabrizzio,Gutierrez,960936246,fabrizzio150@gmail.com
+Alvaro,Lopez,978654123,Alvaro@hotmail.com
+lucas,zavaleta,456789123,lucas@hotmail.com
